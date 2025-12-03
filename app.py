@@ -23,7 +23,7 @@ CONVENIENCE_DRUG_IMAGES = {
 @st.cache_data
 def load_and_clean_data():
     try:
-        df = pd.read_csv('프로젝트/미니프로젝트(쵸비상약)/drugs_list_v2.csv')
+        df = pd.read_csv('drugs_list_v2.csv')
         
         # [Issue 4 해결] 효능이나 사용법이 없는 데이터는 삭제 (결측치 제거)
         df = df.dropna(subset=['효능효과', '사용법'])
@@ -70,7 +70,7 @@ def main():
         </style>
     """, unsafe_allow_html=True)
 
-    st.title("💊 쵸 비 상 약 (Cho-Bi-Sang-Yak)")
+    st.title("💊 쵸 비 상 약 💊")
     st.markdown("### 🚑 내 손 안의 의사, 증상만 말씀하세요!")
 
     df = load_and_clean_data()
@@ -145,4 +145,5 @@ def main():
             )
 
 if __name__ == '__main__':
+
     main()
